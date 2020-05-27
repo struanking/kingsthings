@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/job.md",
+  "tags": "job",
+  "templateEngineOverride": "njk,md"
+}
