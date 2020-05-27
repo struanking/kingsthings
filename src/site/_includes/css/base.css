@@ -1,0 +1,81 @@
+body {
+  background: var(--color-body);
+  color: var(--color-text);
+  font-family: var(--font-base);
+  font-size: var(--step-0);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1 {
+  font-size: var(--step-5);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-1);
+}
+a {
+  background: linear-gradient(
+    90deg,
+    var(--color-link),
+    var(--color-link-light)
+  );
+  color: var(--color-link);
+  text-decoration-color: var(--color-link);
+  /* text-decoration-thickness: 0.1rem; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+/* a:visited {
+  color: var(--color-link-visited);
+  text-decoration-color: var(--color-link-visited);
+} */
+a:hover {
+  --color-link: var(--color-link-light);
+}
+:focus {
+  outline: 0.1rem solid var(--color-highlight);
+  outline-offset: 0.1rem;
+}
+:hover:focus {
+  outline: 0;
+}
+::selection {
+  background: var(--color-highlight);
+  color: var(--color-text);
+}
+
+.skip-link:focus {
+  clip: unset;
+  width: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 99;
+}
+
+[role="banner"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--step--2) 0;
+}
+[role="banner"] > * {
+  display: flex;
+}
+
+main {
+  flex: auto;
+  padding: var(--size-major) 0;
+}
+main:focus {
+  outline: 0;
+}
