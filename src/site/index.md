@@ -25,7 +25,7 @@ layout: layouts/base.njk
     </div>
   </div>
 
-  <aside class="full-bleed promo">
+  <article class="full-bleed promo">
     <div class="wrapper flow">
       <p>
         I have over five years React experience but happy to work with other
@@ -46,7 +46,7 @@ layout: layouts/base.njk
         <li>Experienced with Agile practices and methodologies</li>
       </ul>
     </div>
-  </aside>
+  </article>
 
   <div class="full-bleed promo-gradient">
     <div class="wrapper">
