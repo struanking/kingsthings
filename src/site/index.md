@@ -4,24 +4,26 @@ layout: layouts/base.njk
 ---
 
 <main id="main">
-<header class="flow indent">
-  <h1>
-    Web developer
-    <span class="code indent">
-      HTML. CSS. JavaScript. Accessibility.
-    </span>
-  </h1>
-
-  <p class="measure-short">
-    I'm a front-end developer with a passion for HTML and accessibility. I
-    have 15+ years of experience but still looking for opportunities to
-    learn and improve.
-  </p>
+  <header class="flow indent">
+    <h1>
+      Web developer
+      <span class="code indent">
+        HTML. CSS. JavaScript. Accessibility.
+      </span>
+    </h1>
+    <p class="measure-short">
+      I'm a front-end developer with a passion for HTML and accessibility. I
+      have 15+ years of experience but still looking for opportunities to
+      learn and improve.
+    </p>
   </header>
 
   <div class="full-bleed hero">
     <div class="wrapper">
-      <img src="/images/wp-glasses.png" alt="" />
+      <picture>
+        <source type="image/webp" media="(min-width: 400px)" srcset="/images/wp-glasses.webp" />
+        <img src="/images/wp-glasses.png" alt="" />
+      </picture>
     </div>
   </div>
 

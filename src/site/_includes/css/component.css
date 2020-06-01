@@ -1,6 +1,11 @@
 /* Hero */
+
+main > header {
+  padding-bottom: var(--step-2);
+}
+
 .hero {
-  padding: var(--step-2) 0 var(--step-4);
+  padding-bottom: var(--step-4);
 }
 
 .hero img {
