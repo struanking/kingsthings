@@ -97,10 +97,17 @@ main > header {
   background-color: var(--color-skills);
 }
 .skills-interests > article {
+  position: relative;
   padding: var(--step-0);
 }
 @media screen and (min-width: 638px) {
-  .skills-interests > * + * {
-    border-left: solid 1px var(--color-secondary-mid);
+  .skills-interests > * + *::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: var(--step-1);
+    bottom: var(--step-1);
+    left: -4px;
+    border-left: solid 1px var(--color-divider);
   }
 }

@@ -117,6 +117,7 @@ img:not([alt]) {
   --color-link-light: var(--color-blue-400) !important;
   --color-button: white !important;
   --color-button-hover: var(--color-cool-grey-700) !important;
+  --color-divider: var(--color-secondary) !important;
 }
 
 [data-site-theme="dark"] {
@@ -133,4 +134,5 @@ img:not([alt]) {
   --color-link-light: var(--color-blue-100);
   --color-button: var(--color-cool-grey-700);
   --color-button-hover: white;
+  --color-divider: var(--color-cool-grey-700) !important;
 }
