@@ -79,3 +79,58 @@ img:not([alt]) {
     scroll-behavior: auto !important;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --site-theme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --site-theme: dark;
+    --color-body: var(--color-cool-grey-900);
+    --color-text: var(--color-secondary-light);
+    --color-promo: var(--color-cool-grey-800);
+    --color-skills: var(--color-cool-grey-850);
+    --color-card: var(--color-cool-grey-850);
+    --color-card-title: var(--color-yellow-500);
+    --color-date: var(--color-yellow-100);
+    --color-tag: var(--color-yellow-200);
+    --color-tag-text: var(--color-warm-grey-900); /* #040404; */
+    --color-link: var(--color-blue-200);
+    --color-link-light: var(--color-blue-100);
+  }
+}
+
+[data-site-theme="light"] {
+  --color-body: var(--color-secondary-light) !important;
+  --color-text: var(--color-warm-grey-900) !important;
+  --color-promo: var(--color-primary) !important;
+  --color-skills: var(--color-secondary-light) !important;
+  --color-card: white !important;
+  --color-card-title: var(--color-blue-700) !important;
+  --color-date: var(--color-primary-mid) !important;
+  --color-tag: var(--color-blue-100) !important;
+  --color-tag-text: var(--color-text) !important;
+  --color-link: var(--color-blue-700) !important;
+  --color-link-light: var(--color-blue-400) !important;
+  --color-button: white !important;
+  --color-button-hover: var(--color-cool-grey-700) !important;
+}
+
+[data-site-theme="dark"] {
+  --color-body: var(--color-cool-grey-900);
+  --color-text: var(--color-secondary-light);
+  --color-promo: var(--color-cool-grey-800);
+  --color-skills: var(--color-cool-grey-850);
+  --color-card: var(--color-cool-grey-850);
+  --color-card-title: var(--color-yellow-500);
+  --color-date: var(--color-yellow-100);
+  --color-tag: var(--color-yellow-200);
+  --color-tag-text: var(--color-warm-grey-900);
+  --color-link: var(--color-blue-200);
+  --color-link-light: var(--color-blue-100);
+  --color-button: var(--color-cool-grey-700);
+  --color-button-hover: white;
+}

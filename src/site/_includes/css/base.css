@@ -1,3 +1,7 @@
+* {
+  transition: background 150ms ease-in, color 150ms ease-in;
+}
+
 body {
   background: var(--color-body);
   color: var(--color-text);
@@ -24,6 +28,7 @@ h3 {
 a {
   color: var(--color-link);
   font-weight: 500;
+  text-decoration-thickness: 1px;
 }
 /* a:visited {
   color: var(--color-link-visited);
@@ -31,6 +36,7 @@ a {
 } */
 a:hover {
   --color-link: var(--color-link-light);
+  text-decoration-thickness: 0.1rem;
 }
 :focus {
   outline: 0.1rem solid var(--color-highlight);
@@ -68,4 +74,24 @@ main {
 }
 main:focus {
   outline: 0;
+}
+[role="banner"] nav {
+  font-size: var(--step--1);
+}
+[role="banner"] nav > * + * {
+  margin-left: var(--step--2);
+}
+button {
+  background-color: var(--color-button);
+  color: var(--color-button-hover);
+  border: solid 0.1rem var(--color-button-hover);
+  border-radius: var(--step--1);
+  font-size: inherit;
+  padding-left: var(--step--2);
+  padding-right: var(--step--2);
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-button-hover);
+  color: var(--color-button);
 }
