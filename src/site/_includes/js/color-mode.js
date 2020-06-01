@@ -9,6 +9,7 @@ function themeToggler() {
   var theme = STATES[currentTheme] || "dark";
   var html = document.querySelector("html");
   var toggleButton = document.querySelector("[data-toggle-theme]");
+  var toggleStatus = document.querySelector("[data-toggle-status]");
 
   function toggleTheme() {
     return STATES[currentTheme];
@@ -23,11 +24,12 @@ function themeToggler() {
     var newTheme = toggleTheme();
     updateCurrentTheme(newTheme);
     setTheme(newTheme);
-    updateToggleButtonText(oldTheme);
+    updateToggleText(oldTheme);
   }
 
-  function updateToggleButtonText(theme) {
-    toggleButton.innerHTML = "Enable " + theme + "theme";
+  function updateToggleText(theme) {
+    toggleButton.innerHTML = "Enable " + theme + " theme";
+    toggleStatus.innerHTML = 'Color mode is "' + currentTheme + '"';
   }
 
   function getPreferredTheme() {
@@ -41,6 +43,6 @@ function themeToggler() {
   }
 
   setTheme(currentTheme);
-  updateToggleButtonText(theme);
+  updateToggleText(theme);
   toggleButton.addEventListener("click", handleThemeToggle);
 }

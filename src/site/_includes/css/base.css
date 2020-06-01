@@ -95,3 +95,6 @@ button:hover {
   background-color: var(--color-button-hover);
   color: var(--color-button);
 }
+[data-toggle-theme] {
+  min-width: 19ch;
+}
