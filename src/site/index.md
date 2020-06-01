@@ -21,7 +21,7 @@ layout: layouts/base.njk
   <div class="full-bleed hero">
     <div class="wrapper">
       <picture>
-        <source type="image/webp" media="(min-width: 400px)" srcset="/images/wp-glasses.webp" />
+        <source type="image/webp" srcset="/images/wp-glasses.webp" />
         <img src="/images/wp-glasses.png" alt="" />
       </picture>
     </div>

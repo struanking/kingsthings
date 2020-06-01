@@ -115,4 +115,6 @@
   --font-mono: "Courier New", Courier, monospace;
 
   --size-major: var(--step-4);
+
+  --breakpoint-small: 420px;
 }

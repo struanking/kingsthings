@@ -7,7 +7,6 @@ main > header {
 .hero {
   padding-bottom: var(--step-4);
 }
-
 .hero img {
   display: block;
   margin: auto;

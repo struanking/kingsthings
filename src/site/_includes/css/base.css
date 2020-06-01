@@ -60,12 +60,17 @@ a:hover {
 
 [role="banner"] {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: var(--step--2) 0;
 }
 [role="banner"] > * {
   display: flex;
+}
+.site-title {
+  font-size: var(--step-1);
+  margin-right: var(--step--1);
 }
 
 main {
@@ -76,10 +81,23 @@ main:focus {
   outline: 0;
 }
 [role="banner"] nav {
+  flex: 1 0 auto;
+  align-items: center;
   font-size: var(--step--1);
 }
 [role="banner"] nav > * + * {
-  margin-left: var(--step--2);
+  margin-left: 0.65em;
+}
+[role="banner"] nav button {
+  margin-left: auto;
+}
+@media screen and (min-width: 480px) {
+  [role="banner"] nav {
+    justify-content: flex-end;
+  }
+  [role="banner"] nav button {
+    margin-left: 0.65em;
+  }
 }
 button {
   background-color: var(--color-button);
@@ -87,8 +105,7 @@ button {
   border: solid 0.1rem var(--color-button-hover);
   border-radius: var(--step--1);
   font-size: inherit;
-  padding-left: var(--step--2);
-  padding-right: var(--step--2);
+  padding: 0;
   cursor: pointer;
 }
 button:hover {
@@ -96,5 +113,5 @@ button:hover {
   color: var(--color-button);
 }
 [data-toggle-theme] {
-  min-width: 19ch;
+  min-width: 18ch;
 }
