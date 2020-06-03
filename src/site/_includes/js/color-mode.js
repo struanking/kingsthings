@@ -1,35 +1,35 @@
 document.addEventListener("DOMContentLoaded", themeToggler);
 
 function themeToggler() {
-  var STATES = Object.freeze({
+  const TOGGLE_STATES = Object.freeze({
     dark: "light",
     light: "dark",
   });
-  var currentTheme = getPreferredTheme();
-  var theme = STATES[currentTheme] || "dark";
-  var html = document.querySelector("html");
-  var toggleButton = document.querySelector("[data-toggle-theme]");
-  var toggleStatus = document.querySelector("[data-toggle-status]");
+  let currentTheme = getPreferredTheme();
+  const theme = TOGGLE_STATES[currentTheme] || "dark";
+  const html = document.querySelector("html");
+  const toggleButton = document.querySelector("[data-toggle-theme]");
+  const toggleStatus = document.querySelector("[data-toggle-status]");
 
   function toggleTheme() {
-    return STATES[currentTheme];
+    return TOGGLE_STATES[currentTheme];
   }
 
-  function updateCurrentTheme(theme) {
+  function setCurrentTheme(theme) {
     currentTheme = theme;
   }
 
   function handleThemeToggle() {
-    var oldTheme = currentTheme;
-    var newTheme = toggleTheme();
-    updateCurrentTheme(newTheme);
+    const oldTheme = currentTheme;
+    const newTheme = toggleTheme();
+    setCurrentTheme(newTheme);
     setTheme(newTheme);
     updateToggleText(oldTheme);
   }
 
   function updateToggleText(theme) {
-    toggleButton.innerHTML = "Enable " + theme + " theme";
-    toggleStatus.innerHTML = 'Color mode is "' + currentTheme + '"';
+    toggleButton.innerHTML = `Enable ${theme} theme`;
+    toggleStatus.innerHTML = `Color mode is "${currentTheme}"`;
   }
 
   function getPreferredTheme() {

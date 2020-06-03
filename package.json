@@ -20,11 +20,11 @@
     "dayjs": "^1.8.27",
     "dotenv": "^8.0.0",
     "html-minifier": "^4.0.0",
-    "uglify-js": "^3.6.0",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "terser": "^4.7.0"
   },
   "prettier": {}
 }

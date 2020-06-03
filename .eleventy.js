@@ -14,8 +14,8 @@ module.exports = function (config) {
 
   // compress and combine js files
   config.addFilter("jsmin", function (code) {
-    const UglifyJS = require("uglify-js");
-    let minified = UglifyJS.minify(code);
+    const Terser = require("terser");
+    let minified = Terser.minify(code);
     if (minified.error) {
       console.log("UglifyJS error: ", minified.error);
       return code;
