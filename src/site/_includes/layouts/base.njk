@@ -30,11 +30,11 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
     <a class="skip-link visually-hidden" href="#main">
       Skip to content
     </a>
-    <div class="wrapper">
-      {% include "header.njk" %}
-      {{ content | safe }}
-      {% include "footer.njk" %}
-    </div>
+    {% include "header.njk" %}
+    <main id="main" class="wrapper">
+    {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
   </body>
   {% set js %}
     {% include "js/color-mode.js" %}

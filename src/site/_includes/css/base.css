@@ -3,6 +3,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background: var(--color-body);
   color: var(--color-text);
   font-family: var(--font-base);
@@ -114,4 +116,8 @@ button:hover {
 }
 [data-toggle-theme] {
   min-width: 18ch;
+}
+
+[role="contentinfo"] {
+  margin-top: auto;
 }
