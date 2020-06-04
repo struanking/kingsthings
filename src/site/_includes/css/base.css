@@ -65,7 +65,8 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: var(--step--2) 0;
+  padding-top: var(--step--2);
+  padding-bottom: var(--step--2);
 }
 [role="banner"] > * {
   display: flex;
