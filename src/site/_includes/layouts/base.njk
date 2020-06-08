@@ -27,19 +27,27 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
     <meta name="description" content="Struan King portfolio" />
   </head>
   <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
+    <!-- <div id="notification">A new version of this app is available. <button type="button" id="reload">Update to new version</button></div> -->
     <a class="skip-link visually-hidden" href="#main">
       Skip to content
     </a>
     {% include "header.njk" %}
     <main id="main" class="wrapper">
-    {{ content | safe }}
+      {{ content | safe }}
     </main>
     {% include "footer.njk" %}
   </body>
-  {% set js %}
-    {% include "js/color-mode.js" %}
-  {% endset %}
+  {% set js %} {% include "js/color-mode.js" %} {% endset %}
   <script>
     {{ js | jsmin | safe }}
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      }).catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
   </script>
 </html>

@@ -1,0 +1,8 @@
+---
+permalink: service-worker.js
+---
+{% set js %}
+  {% include "js/service-worker.js" %}
+{% endset %}
+
+{{ js | jsmin | safe }}
