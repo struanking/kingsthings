@@ -24,8 +24,6 @@ self.addEventListener("fetch", function (event) {
             if (/\.jpg$|.png$|.webp$/.test(event.request.url)) {
               console.log("Cache asset", event.request.url);
               cache.put(event.request, response.clone());
-            } else {
-              console.log("Do not cache asset", event.request.url);
             }
             return response;
           })
