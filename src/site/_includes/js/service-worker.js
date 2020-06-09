@@ -1,5 +1,11 @@
 var cacheName = "v2";
-var cacheList = ["/", "index.html", "css/things.css"]; //, "js/color-mode.js"];
+var cacheList = [
+  "/",
+  "index.html",
+  "css/things.css",
+  "images/wp-glasses.png",
+  "images/wp-glasses.webp",
+]; //, "js/color-mode.js"];
 
 self.addEventListener("install", function (event) {
   console.log("SW: Install");
