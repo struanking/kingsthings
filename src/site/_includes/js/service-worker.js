@@ -18,7 +18,6 @@ self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.open(cacheName).then(function (cache) {
       return cache.match(event.request).then(function (response) {
-        console.log("event.request", event.request);
         return (
           response ||
           fetch(event.request).then(function (response) {
