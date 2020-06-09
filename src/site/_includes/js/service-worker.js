@@ -1,4 +1,4 @@
-var cacheName = "v2";
+var cacheName = "kingsthings_v2";
 var cacheList = ["/", "index.html", "css/things.css"]; //, "js/color-mode.js"];
 
 self.addEventListener("install", function (event) {
@@ -15,14 +15,20 @@ self.addEventListener("activate", function (event) {
 });
 
 self.addEventListener("fetch", function (event) {
-  console.log("SW: checking for cached asset");
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (response) {
-        console.log("SW: Using cached asset");
-        return response;
-      }
-      return fetch(event.request);
+    caches.open(cacheName).then(function (cache) {
+      return cache.match(event.request).then(function (response) {
+        return (
+          response ||
+          fetch(event.request).then(function (response) {
+            if (/\.jpg$|.png$|.webp$/.test(event.request.url)) {
+              console.log("Cache image", event.request.url);
+              cache.put(event.request, response.clone());
+            }
+            return response;
+          })
+        );
+      });
     })
   );
 });
