@@ -42,12 +42,21 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
     {{ js | jsmin | safe }}
   </script>
   <script>
+  {% if not env.IS_DEV %}
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-        console.log('Registration successful, scope is:', registration.scope);
-      }).catch(function(error) {
-        console.log('Service worker registration failed, error:', error);
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          registration.addEventListener('updatefound', function() {
+            var newWorker = registration.installing;
+
+          console.log('New service worker installing:', newWorker);
+          });
+        })
+        .catch(function(error) {
+          console.log('Service worker registration failed:', error);
+        });
       });
     }
+  {% endif %}
   </script>
 </html>
