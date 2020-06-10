@@ -27,13 +27,11 @@ module.exports = function (config) {
   config.addPassthroughCopy("./src/site/images");
   config.addPassthroughCopy({ "./src/site/favicon": "/" });
 
-  // make the seed target act like prod
-  env = env == "seed" ? "prod" : env;
   return {
     dir: {
       input: "src/site",
       output: "dist",
-      data: `_data/${env}`,
+      data: "_data/",
     },
     // templateFormats: ["njk", "md", "11ty.js"],
     templateFormats: ["njk", "md"],
