@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", themeToggler);
 
 function themeToggler() {
+  const STORAGE_KEY = "user-color-scheme";
   const TOGGLE_STATES = Object.freeze({
     dark: "light",
     light: "dark",
   });
-  let currentTheme = getPreferredTheme();
+  let currentTheme = localStorage.getItem(STORAGE_KEY) || getPreferredTheme();
   const theme = TOGGLE_STATES[currentTheme] || "dark";
   const html = document.querySelector("html");
   const toggleButton = document.querySelector("[data-toggle-theme]");
@@ -19,12 +20,10 @@ function themeToggler() {
     currentTheme = theme;
   }
 
-  function handleThemeToggle() {
-    const oldTheme = currentTheme;
-    const newTheme = toggleTheme();
-    setCurrentTheme(newTheme);
-    setTheme(newTheme);
-    updateToggleText(oldTheme);
+  function setTheme(theme) {
+    html.setAttribute("data-site-theme", theme);
+    console.log("set localstorage");
+    localStorage.setItem(STORAGE_KEY, theme);
   }
 
   function updateToggleText(theme) {
@@ -38,8 +37,12 @@ function themeToggler() {
       .getPropertyValue("--site-theme");
   }
 
-  function setTheme(theme) {
-    html.setAttribute("data-site-theme", theme);
+  function handleThemeToggle() {
+    const oldTheme = currentTheme;
+    const newTheme = toggleTheme();
+    setCurrentTheme(newTheme);
+    setTheme(newTheme);
+    updateToggleText(oldTheme);
   }
 
   setTheme(currentTheme);
