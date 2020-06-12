@@ -22,7 +22,6 @@ function themeToggler() {
 
   function setTheme(theme) {
     html.setAttribute("data-site-theme", theme);
-    console.log("set localstorage");
     localStorage.setItem(STORAGE_KEY, theme);
   }
 

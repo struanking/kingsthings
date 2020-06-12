@@ -36,24 +36,43 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
       {{ content | safe }}
     </main>
     {% include "footer.njk" %}
+    <div role="alert" id="online-status-message"></div>
   </body>
   {% set js %} {% include "js/color-mode.js" %} {% endset %}
   <script>
     {{ js | jsmin | safe }}
   </script>
   <script>
+    var isOnline = ("onLine" in navigator) && navigator.onLine;
+    var hasServiceWorker = 'serviceWorker' in navigator;
+    var statusMessage = document.getElementById('online-status-message');
+
+    // online/offline
+    window.addEventListener("online", function online() {
+      statusMessage.innerText = "You are online";
+			statusMessage.classList.remove("offline");
+			statusMessage.classList.add("online");
+			isOnline = true;
+		},false);
+
+		window.addEventListener("offline", function offline() {
+      statusMessage.innerText = "You are offline";
+			statusMessage.classList.remove("online");
+			statusMessage.classList.add("offline");
+			isOnline = false;
+		},false);
   {% if not env.IS_DEV %}
-    if ('serviceWorker' in navigator) {
+    // Service Worker
+    if (hasServiceWorker) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
           registration.addEventListener('updatefound', function() {
             var newWorker = registration.installing;
-
-          console.log('New service worker installing:', newWorker);
+            console.log('New service worker installing:', newWorker);
           });
         })
         .catch(function(error) {
-          console.log('Service worker registration failed:', error);
+          console.error('Service worker registration failed:', error);
         });
       });
     }

@@ -123,3 +123,47 @@ button:hover {
 [role="contentinfo"] {
   margin-top: auto;
 }
+
+@keyframes goingOnline {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: scaleX(0.85);
+  }
+  20% {
+    transform: scaleX(1);
+  }
+  85% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes goingOffline {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[role="alert"] {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: var(--step--2);
+  transition: transform 0.25s linear;
+}
+.offline {
+  animation: 0.25s linear goingOffline;
+  background-color: var(--color-offline);
+}
+.online {
+  animation: 3s linear goingOnline forwards;
+  background-color: var(--color-online);
+}

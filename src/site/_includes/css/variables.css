@@ -54,6 +54,8 @@
   "yellow-700": "#A27C1A",
   "yellow-800": "#7C5E10",
   "yellow-900": "#513C06", 
+
+  "green-400": "#57AE5B"
   */
 
   --color-cool-grey-600: #52606d;
@@ -81,6 +83,7 @@
   --color-yellow-400: #f7d070;
   --color-yellow-500: #e9b949;
   --color-yellow-600: #c99a2e;
+  --color-green-400: #57ae5b;
 
   --color-text: var(--color-warm-grey-900);
   --color-heading: var(--color-warm-grey-800);
@@ -103,6 +106,8 @@
   --color-link-light: var(--color-blue-400);
   --color-link-visited: var(--color-red-700);
   --color-highlight: var(--color-yellow-400);
+  --color-offline: var(--color-red-400);
+  --color-online: var(--color-green-400);
   /* 
 
   shadow #857F72 or #A39E93 or #B8B2A7 or #D3CEC4 or #E8E6E1
