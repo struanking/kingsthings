@@ -107,7 +107,7 @@ layout: layouts/base.njk
           I am currently doing a course using Next.js, GraphQL and Prisma.
         </p>
         <p>
-          With respect to accessibility I have been attending an <a href="https://www.meetup.com/London-Accessibility-Meetup">Accessibility Meetup</a> whenever possible.
+          With respect to accessibility I have been attending an <a href="https://www.meetup.com/London-Accessibility-Meetup" target="_blank" rel="noopener">Accessibility Meetup</a> whenever possible.
         </p>
         <p>
           I also enjoy reading books such as; Grokking Algorithms (Aditya
