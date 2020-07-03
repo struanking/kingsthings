@@ -9,8 +9,8 @@ module.exports = function (config) {
   config.addLayoutAlias("default", "layouts/base.njk");
 
   // Add some utility filters
-  config.addFilter("dateDisplay", require("./src/utils/filters/date.js"));
-  config.addFilter("cssmin", require("./src/utils/filters/css-min.js"));
+  config.addFilter("dateDisplay", require("./src/filters/date.js"));
+  config.addFilter("cssmin", require("./src/filters/css-min.js"));
 
   // Only minify HTML if we are in production because it slows builds _right_ down
   if (isProduction) {
