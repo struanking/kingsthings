@@ -1,4 +1,7 @@
 module.exports = function (config) {
+  // Create a helpful production flag
+  const isProduction = process.env.NODE_ENV === "production";
+
   // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
 
@@ -9,8 +12,10 @@ module.exports = function (config) {
   config.addFilter("dateDisplay", require("./src/utils/filters/date.js"));
   config.addFilter("cssmin", require("./src/utils/filters/css-min.js"));
 
-  // minify the html output
-  config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+  // Only minify HTML if we are in production because it slows builds _right_ down
+  if (isProduction) {
+    config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+  }
 
   // compress and combine js files
   config.addFilter("jsmin", function (code) {
