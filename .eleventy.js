@@ -24,12 +24,12 @@ module.exports = function (config) {
   });
 
   // pass some assets right through
-  config.addPassthroughCopy("./src/site/images");
-  config.addPassthroughCopy({ "./src/site/favicon": "/" });
+  config.addPassthroughCopy("./src/images");
+  config.addPassthroughCopy({ "./src/favicon": "/" });
 
   return {
     dir: {
-      input: "src/site",
+      input: "src",
       output: "dist",
       data: "_data/",
     },
