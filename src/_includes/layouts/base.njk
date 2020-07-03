@@ -15,7 +15,6 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
       media="print"
       onload="this.media='all'"
     />
-    <link rel="stylesheet" href="/css/things.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -25,6 +24,7 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
     <meta name="theme-color" content="#ffffff" />
     <title>{{ title }}</title>
     <meta name="description" content="Struan King portfolio" />
+    <style>{% include "css/things.css" %}</style>
   </head>
   <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
     <!-- <div id="notification">A new version of this app is available. <button type="button" id="reload">Update to new version</button></div> -->
