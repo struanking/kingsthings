@@ -1,14 +1,12 @@
 {
-  "name": "Kingsthings",
+  "name": "kingsthings",
   "version": "1.0.0",
   "description": "Homepage of Struan King",
   "author": "Struan King",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "seed": "cross-env ELEVENTY_ENV=seed eleventy"
+    "start": "npx gulp && concurrently 'npx gulp watch' 'npx eleventy --serve'",
+    "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy"
   },
   "repository": {
     "type": "git",
@@ -17,14 +15,17 @@
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "clean-css": "^4.2.3",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
     "dayjs": "^1.8.27",
     "dotenv": "^8.0.0",
-    "xml2js": "^0.4.19"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.2",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
     "html-minifier": "^4.0.0",
-    "terser": "^4.7.0"
+    "sass": "^1.26.9",
+    "terser": "^4.7.0",
+    "xml2js": "^0.4.19"
   },
   "prettier": {}
 }
