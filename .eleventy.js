@@ -10,7 +10,6 @@ module.exports = function (config) {
 
   // Add filters
   config.addFilter("dateDisplay", require("./src/filters/date.js"));
-  config.addFilter("cssmin", require("./src/filters/css-min.js"));
   config.addFilter("jsmin", require("./src/filters/js-min.js"));
 
   // Only minify HTML if we are in production because it slows builds _right_ down
@@ -21,6 +20,9 @@ module.exports = function (config) {
   // pass some assets right through
   config.addPassthroughCopy("./src/images");
   config.addPassthroughCopy({ "./src/favicon": "/" });
+
+  // .eleventyignore instead
+  config.setUseGitIgnore(false);
 
   return {
     templateFormats: ["njk", "md"],
