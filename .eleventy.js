@@ -23,15 +23,14 @@ module.exports = function (config) {
   config.addPassthroughCopy({ "./src/favicon": "/" });
 
   return {
-    dir: {
-      input: "src",
-      output: "dist",
-      data: "_data/",
-    },
-    // templateFormats: ["njk", "md", "11ty.js"],
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true,
+    dir: {
+      input: "src",
+      output: "dist",
+      data: "_data",
+    },
   };
 };
