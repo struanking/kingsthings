@@ -8,25 +8,15 @@ module.exports = function (config) {
   // Layout aliases can make templates more portable
   config.addLayoutAlias("default", "layouts/base.njk");
 
-  // Add some utility filters
+  // Add filters
   config.addFilter("dateDisplay", require("./src/filters/date.js"));
   config.addFilter("cssmin", require("./src/filters/css-min.js"));
+  config.addFilter("jsmin", require("./src/filters/js-min.js"));
 
   // Only minify HTML if we are in production because it slows builds _right_ down
   if (isProduction) {
     config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
   }
-
-  // compress and combine js files
-  config.addFilter("jsmin", function (code) {
-    const Terser = require("terser");
-    let minified = Terser.minify(code);
-    if (minified.error) {
-      console.log("UglifyJS error: ", minified.error);
-      return code;
-    }
-    return minified.code;
-  });
 
   // pass some assets right through
   config.addPassthroughCopy("./src/images");
