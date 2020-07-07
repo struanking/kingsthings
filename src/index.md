@@ -6,9 +6,9 @@ layout: layouts/base.njk
 <header class="flow indent">
   <h1>
     Web developer
-    <span class="code indent">
+    <code class="indent">
       HTML. CSS. JavaScript. Accessibility.
-    </span>
+    </code>
   </h1>
   <p class="measure-short">
     I'm a front-end developer with a passion for HTML and accessibility. I

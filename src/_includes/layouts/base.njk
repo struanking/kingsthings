@@ -26,18 +26,25 @@ font: "https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500"
     <meta name="description" content="Struan King portfolio" />
     <style>{% include "css/things.css" %}</style>
   </head>
-  <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
-    <!-- <div id="notification">A new version of this app is available. <button type="button" id="reload">Update to new version</button></div> -->
-    <a class="skip-link visually-hidden" href="#main">
-      Skip to content
-    </a>
-    {% include "header.njk" %}
-    <main id="main" class="wrapper">
-      {{ content | safe }}
-    </main>
-    {% include "footer.njk" %}
-    <div role="alert" id="online-status-message"></div>
+  <body>
+    <div class="site-wrap">
+      <!-- <div id="notification">A new version of this app is available. <button type="button" id="reload">Update to new version</button></div> -->
+      <a class="skip-link visually-hidden" href="#main">
+        Skip to content
+      </a>
+      
+      {% include "header.njk" %}
+      
+      <main id="main" class="wrapper" tabindex="-1">
+        {{ content | safe }}
+      </main>
+
+      {% include "footer.njk" %}
+      
+      <div role="alert" id="online-status-message"></div>
+    </div>
   </body>
+  
   {% set js %} {% include "js/color-mode.js" %} {% endset %}
   <script>
     {{ js | jsmin | safe }}

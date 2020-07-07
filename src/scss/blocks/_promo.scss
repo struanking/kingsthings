@@ -1,0 +1,14 @@
+/* Promo */
+.promo {
+  background-color: var(--color-promo);
+  color: var(--color-secondary-mid);
+  padding-top: var(--step-2);
+}
+
+.promo-gradient {
+  background-image: linear-gradient(
+    var(--color-promo) 16%,
+    var(--color-body) 16%
+  );
+  margin-top: 0;
+}

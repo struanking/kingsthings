@@ -1,12 +1,25 @@
 @import "variables";
 @import "reset";
 
-@import "utilities/utilities";
+// Import blocks
+@import "blocks/components";
+@import "blocks/card";
+@import "blocks/hero";
+@import "blocks/professional-experience";
+@import "blocks/promo";
+@import "blocks/skills-interest";
+@import "blocks/tag";
+
+// Import utilities
+@import "utilities/flow";
 @import "utilities/fluid-text";
 @import "utilities/full-bleed";
+@import "utilities/indent";
+@import "utilities/inline-list";
+@import "utilities/measure-short";
+@import "utilities/site-wrap";
 @import "utilities/visually-hidden";
-
-@import "blocks/components";
+@import "utilities/wrapper";
 
 body {
   display: flex;
@@ -57,6 +70,11 @@ a:hover {
 ::selection {
   background: var(--color-highlight);
   color: var(--color-text);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
 }
 
 .skip-link:focus {

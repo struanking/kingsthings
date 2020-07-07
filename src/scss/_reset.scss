@@ -1,3 +1,8 @@
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -30,10 +35,8 @@ dd {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
