@@ -63,10 +63,10 @@
       if (hasServiceWorker) {
         // window.addEventListener('load', function() {
           navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-            console.error('Service worker registred:', registration);
+            console.info('Service worker registred:', registration);
           })
           .catch(function(error) {
-            console.error('Service worker registration failed:', error);
+            console.warn('Service worker registration failed:', error);
           });
         // });
       }

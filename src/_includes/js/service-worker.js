@@ -1,5 +1,5 @@
-var cacheName = `kingsthings_v1`;
-var cacheList = ["/", "index.html", "css/things.css"]; //, "js/color-mode.js"];
+var cacheName = `kingsthings_v2`;
+var cacheList = ["/", "index.html"]; // "css/things.css", "js/color-mode.js"];
 
 self.addEventListener("install", function (event) {
   self.skipWaiting();
